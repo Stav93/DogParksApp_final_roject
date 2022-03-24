@@ -1,15 +1,18 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import { useUsersContext } from "../../../Context/user-context"
 import classes from "./Navigation.module.css"
+import { Link } from "react-router-dom"
 
 function Navigation() {
-  const { onLogout , isLoggedIn } = useUsersContext()
+  const { user, onLogout, isLoggedIn } = useUsersContext()
   return (
     <nav className={classes.nav}>
       <ul>
         {isLoggedIn && (
           <li>
-            <a href="/">My Profile</a>
+            {/* <a href="/">My Profile</a> */}
+            {/* add style to active page */}
+            <Link to={`/profile/${user.name}`}>My Profile</Link>
           </li>
         )}
         {isLoggedIn && (

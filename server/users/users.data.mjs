@@ -27,6 +27,11 @@ export async function addUser(newUser) {
     const usersColection = await getUsersColletion();
     return usersColection.insertOne(newUser);
 }
+// export async function addUser(newUser) {
+//     const usersColection = await getUsersColletion();
+//     const user = usersColection.insertOne(newUser);
+//     return user;
+// }
 
 export async function removeUser(id) {
     const usersColection = await getUsersColletion();

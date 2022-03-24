@@ -34,11 +34,14 @@ UsersRouter.post('/', async (req, res) => {
 });
 
 // post - אובייקט מהקליינט לסרבר שמוסיף את היוזר ומחזיר אותו לקליינט
- 
+UsersRouter.post('/', async (req, res) => {
+  res.send(await addUser(req.body));
+});
+
 //  POST - add user
- UsersRouter.post('/', async (req, res) => {
-   res.send(await addUser(req.body));
- });
+//  UsersRouter.post('/', async (req, res) => {
+//    res.send(await addUser(req.body));
+//  });
 
  //UPDATE - PUT by ID
  UsersRouter.put('/:id', (req, res) => {
